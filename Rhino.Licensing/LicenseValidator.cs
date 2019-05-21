@@ -1,4 +1,3 @@
-using Rhino.Licensing.Logging;
 using System;
 using System.IO;
 
@@ -10,11 +9,6 @@ namespace Rhino.Licensing
     /// </summary>
     public class LicenseValidator : AbstractLicenseValidator
     {
-        /// <summary>
-        /// License validator logger
-        /// </summary>
-        private static readonly ILog Log = LogProvider.GetLogger(typeof(LicenseValidator));
-
         private readonly string licensePath;
         private string inMemoryLicense;
 
@@ -60,7 +54,7 @@ namespace Rhino.Licensing
                 catch (Exception e)
                 {
                     inMemoryLicense = value;
-                    Log.Warn("Could not write new license value, using in memory model instead", e);
+                    Console.WriteLine("Could not write new license value, using in memory model instead", e);
                 }
             }
         }
@@ -72,7 +66,7 @@ namespace Rhino.Licensing
         {
             if (File.Exists(licensePath) == false)
             {
-                Log.WarnFormat("Could not find license file: {0}", licensePath);
+                Console.WriteLine("Could not find license file: {0}", licensePath);
                 throw new LicenseFileNotFoundException();
             }
 

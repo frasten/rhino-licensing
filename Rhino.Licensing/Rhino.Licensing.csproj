@@ -1,4 +1,4 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFrameworks>netstandard2.0;net40</TargetFrameworks>
@@ -61,11 +61,6 @@
     <Reference Include="System.Xml" />     
   </ItemGroup>
 
-  <ItemGroup>
-    <PackageReference Include="log4net" Version="2.0.8" />
-  </ItemGroup>
-  
- 
   <ItemGroup>    
     <Compile Include="$(SolutionDir)\Solution Items\SolutionInfo.cs">
       <Link>Properties\SolutionInfo.cs</Link>
@@ -76,9 +71,6 @@
       <Link>ayende-open-source.snk</Link>
     </None>
     <None Include="Rhino.Licensing.nuspec" />
-  </ItemGroup>
-  <ItemGroup>
-    <PackageReference Include="LibLog" Version="4.2.6" />
   </ItemGroup>
   <ItemGroup Condition="'$(TargetFramework)' == 'netstandard2.0'">
     <PackageReference Include="Microsoft.CSharp">
